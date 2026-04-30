@@ -23,6 +23,11 @@
     "cli",
     "management"
   ],
+  "files": [
+    "bin",
+    "dist",
+    "src"
+  ],
   "author": "svystunov",
   "license": "ISC",
   "bugs": {
