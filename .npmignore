@@ -1,0 +1,21 @@
+# Exclude everything by default
+*
+
+# Include only what we need
+!bin/
+!dist/
+!src/
+!package.json
+!README.md
+!PRD.md
+!tsconfig.json
+!.gitignore
+
+# Exclude files within included directories
+node_modules/
+*.log
+*.cjs
+*.js.map
+.DS_Store
+.pi/
+.task/
