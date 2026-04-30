@@ -18,6 +18,7 @@
     "type": "git",
     "url": "https://github.com/svystunov/task-cli.git"
   },
+  "gitHead": "c02188f67b18e1d5194cd1c9aebfa7b5f1fd705a",
   "keywords": [
     "task",
     "cli",
