@@ -4,6 +4,7 @@ import { Command } from 'commander';
 import * as path from 'path';
 import { listTasks } from '../utils/taskFile.js';
 import { getStatuses, getPriorities, getTeamMembers } from '../utils/config.js';
+import { parseTaskFile } from '../utils/yamlFile.js';
 import { TASKS_DIR, CONFIG_DIR } from '../constants.js';
 
 export const listCommand = new Command('list')
@@ -53,7 +54,7 @@ export const listCommand = new Command('list')
     if (options.status) {
       filteredTasks = filteredTasks.filter(t => {
         try {
-          const taskData = require('../utils/yamlFile.js').parseTaskFile(t.filePath);
+          const taskData = parseTaskFile(t.filePath);
           return taskData.comments.length > 0 && taskData.comments[0].status === options.status;
         } catch {
           return false;
@@ -64,7 +65,7 @@ export const listCommand = new Command('list')
     if (options.assignee) {
       filteredTasks = filteredTasks.filter(t => {
         try {
-          const taskData = require('../utils/yamlFile.js').parseTaskFile(t.filePath);
+          const taskData = parseTaskFile(t.filePath);
           return taskData.comments.length > 0 && taskData.comments[0].assign === options.assignee;
         } catch {
           return false;
@@ -75,7 +76,7 @@ export const listCommand = new Command('list')
     if (options.priority) {
       filteredTasks = filteredTasks.filter(t => {
         try {
-          const taskData = require('../utils/yamlFile.js').parseTaskFile(t.filePath);
+          const taskData = parseTaskFile(t.filePath);
           return taskData.comments.length > 0 && taskData.comments[0].priority === options.priority;
         } catch {
           return false;
