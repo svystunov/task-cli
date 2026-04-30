@@ -14,13 +14,21 @@
   "bin": {
     "task": "./bin/task"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/svystunov/task-cli.git"
+  },
   "keywords": [
     "task",
     "cli",
     "management"
   ],
-  "author": "",
+  "author": "svystunov",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/svystunov/task-cli/issues"
+  },
+  "homepage": "https://github.com/svystunov/task-cli#readme",
   "devDependencies": {
     "@types/cli-progress": "^3.11.6",
     "@types/node": "^22.15.17",
