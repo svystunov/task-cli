@@ -2,6 +2,11 @@
 
 A CLI tool for managing tasks with support for assignees, tags, and comments.
 
+## Installation
+
+```bash
+npm install svystunov/task-cli#main
+```
 
 ## Usage
 
@@ -73,21 +78,27 @@ task comment delete 1
 - `-s, --status <status>`: Status (draft/ready_to_work/...)
 
 ## File structure
-Everything should be storied in project related .task folder
+
+Everything should be stored in a project-related `.task` folder.
+
+```
 .task/
-├──config/
-├────team.md
-├────statuses.md
-├────priority.md
-├──tasks/
-├────00001 The init task for repo initialization.md
-├────00002 CI_CD initial configuration.md
-├──── ...
+├── config/
+│   ├── team.md
+│   ├── statuses.md
+│   └── priority.md
+├── tasks/
+│   ├── 00001-the-init-task-for-repo-initialization.md
+│   ├── 00002-ci-cd-initial-configuration.md
+│   └── ...
+└── next_id.txt
+```
 
 ### Team members
-Task assignment should be done  to person from the list
 
-.task/config/team.md:
+Task assignment should be done to a person from the list.
+
+`.task/config/team.md`:
 ```
 # Team members list
 BA Business Analyst
@@ -95,9 +106,9 @@ PM Product Manage
 ...
 [1 word - key]<Space>[Description]
 ```
-### Task's statuses
+### Task statuses
 
-.task/config/statuses.md:
+`.task/config/statuses.md`:
 ```
 # Task statuses enum
 draft  Initial state
@@ -107,8 +118,9 @@ ready_for_test Task was developed and ready for QA
 [1 word - key]<Space>[Description]
 ```
 
-### Task's priority
-.task/config/priority.md:
+### Task priority
+
+`.task/config/priority.md`:
 ```
 # Task priority enum
 normal  default normal task priority
@@ -120,16 +132,17 @@ critical do it now
 
 
 ### Tasks
-Tasks are stored inside the project file system
+
+Tasks are stored inside the project file system.
+
 ```
-.task/tasks/00001 The init task for repo initialization.md
-.task/tasks/00002 CI_CD initial configuration.md
-...
-[5 digits sequence task number]<Space>[Shorten task description without dangerous symbols(*,&,.,..,etc.)]
+.task/tasks/00001-the-init-task-for-repo-initialization.md
+.task/tasks/00002-ci-cd-initial-configuration.md
 ```
 
-Each file contains 1 task and several comments
-Format YAML + MD:
+Each file contains 1 task and several comments.
+
+Format: YAML + MD (separated by `---`):
 ```
 ---
 id: 00002
